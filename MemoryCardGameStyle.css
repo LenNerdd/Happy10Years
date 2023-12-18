@@ -1,0 +1,172 @@
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: #ffdde1;
+  color: #333;
+  font-family: 'Cute Font', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  color: #F6A5AE;
+  -webkit-text-stroke: 2px #472300;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.actions button {
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: #F6A5AE;
+  font-family: 'Cute Font', cursive;
+  color: #472300;
+  cursor: pointer;
+  border: 2px solid #472300;
+  width: 150px;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, 140px);
+  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+  height: calc(140px / 2 * 3);
+  width: 140px;
+  border-radius: 20px;
+  background-color: #fff;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card .front {
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  background-image: url("./assets/CardCover.jpg");
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+
+.home-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: #F6A5AE;
+  font-family: 'Cute Font', cursive;
+  color: #472300;
+  cursor: pointer;
+  border: 2px solid #472300;
+  margin-top: 5px;
+  width: 150px;
+}
+
+.actions button:hover {
+  background: #f5b7be radial-gradient(circle, transparent 1%, #f5b7be 1%) center/15000%;
+}
+
+.actions button:active {
+  background-color: #f5b7be;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.match-message {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 24px;
+  color: #000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 150px;
+  padding: 20px;
+  z-index: 999;
+  background-color: #fff;
+  background-image: url('./assets/Paper.jpg');
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-message button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  color: #000;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.final-message {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  z-index: 999;
+  background-color: #F6A5AE;
+  font-family: 'Cute Font', cursive;
+  color: #472300;
+  border: 2px solid #472300;
+}

@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cute Font', cursive;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffdde1;
+    background-image: url(assets/Background.png);
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 33.5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    color: #F6A5AE;
+    -webkit-text-stroke: 2px #472300;
+}
+
+.start-screen,
+.score-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.actions button {
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #F6A5AE;
+    font-family: 'Cute Font', cursive;
+    color: #472300;
+    cursor: pointer;
+    border: 2px solid #472300;
+    width: 150px;
+}
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #F6A5AE;
+    font-family: 'Cute Font', cursive;
+    color: #472300;
+    cursor: pointer;
+    border: 2px solid #472300;
+    margin-top: 5px;
+    width: 150px;
+}
+
+button {
+    width: 150px;
+    margin-top: 25px;
+    border: 2px solid #472300;
+    border-radius: 20px;
+    padding: 12px 18px;
+    font-size: 20px;
+    font-family: 'Cute Font', cursive;
+    cursor: pointer;
+    color: #472300;
+    background: #F6A5AE center;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+    transition: background 0.5s;
+}
+
+.actions button:hover {
+    background: #f5b7be radial-gradient(circle, transparent 1%, #f5b7be 1%) center/15000%;
+}
+
+.actions button:active {
+    background-color: #f5b7be;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+#start-button,
+#restart {
+    padding: 0.5em 1.8em;
+    box-shadow: 0 20px 30px #47230066;
+}
+
+#restart {
+    margin-top: 0.9em;
+}
+
+#display-container {
+    background-color: #ffffff;
+    padding: 3.1em 1.8em;
+    width: 80%;
+    max-width: 37.5em;
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.6em;
+    display: none;
+}
+
+.header {
+    margin-bottom: 1.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.6em;
+    border-bottom: 0.1em solid #c0bfd2;
+}
+
+.timer-div {
+    background-color: #F6A5AE;
+    width: 7.5em;
+    border-radius: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7em 1.8em;
+}
+
+.question {
+    margin-bottom: 1.25em;
+    font-weight: 600;
+}
+
+.option-div {
+    font-size: 0.9em;
+    width: 100%;
+    padding: 1em;
+    margin: 0.3em 0;
+    text-align: left;
+    outline: none;
+    background: transparent;
+    border: 1px solid #c0bfd2;
+    border-radius: 0.3em;
+}
+
+.option-div:disabled {
+    color: #000000;
+    cursor: not-allowed;
+}
+
+#next-button {
+    font-size: 1em;
+    margin-top: 1.5em;
+    background-color: #F6A5AE;
+    color: #472300;
+    padding: 0.7em 1.8em;
+    border-radius: 0.3em;
+    float: right;
+    box-shadow: 0px 20px 40px #4723004d;
+}
+
+#next-button:hover {
+    background: #f5b7be radial-gradient(circle, transparent 1%, #f5b7be 1%) center/15000%;
+}
+
+.hide {
+    display: none;
+}
+
+.incorrect {
+    background-color: #ffdde0;
+    color: #d32f2f;
+    border-color: #d32f2f;
+}
+
+.correct {
+    background-color: #e7f6d5;
+    color: #689f38;
+    border-color: #689f38;
+}
+
+#user-score {
+    margin-top: 50px;
+    font-size: 3.0em;
+    color: #F6A5AE;
+    -webkit-text-stroke: 2px #472300;
+}
+
+#user-results {
+    margin-top: 5px;
+    font-size: 2.5em;
+    color: #F6A5AE;
+    -webkit-text-stroke: 2px #472300;
+}
+
+.starting-img {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin-top: -200px;
+}
+
+#PrincessandPeanut {
+    margin-top: 0px;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin-bottom: -100px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>♡ Memory Game ♡</title>
+  <link rel="stylesheet" type="text/css" href="MemoryCardGameStyle.css">
+</head>
+
+<body>
+  <h1>♡ Memory Game ♡</h1>
+  <div class="grid-container"></div>
+  <p>Attempts: <span class="score"></span></p>
+  <div class="actions">
+    <button onclick="restart()">Restart</button>
+    <button onclick="window.location.href='Home.html'" class="home-button">Return</button>
+  </div>
+  <audio autoplay loop id="backgroundMusic">
+    <source src="./music/Camilo- Vida De Rico.mp3" type="audio/mp3">
+    Unsupported in Firefox
+  </audio>
+
+  <script src="MusicPlayer.js"></script>
+  <script src="MemoryCardGame.js"></script>
+</body>
+
+</html>

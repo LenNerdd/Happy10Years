@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>♡ Letter ♡</title>
+    <link rel="stylesheet" type="text/css" href="LetterStyle.css">
+</head>
+
+<body>
+    <h1>♡ December 28, 2023 ♡</h1>
+    <div class="note-container" id="note" onclick="openNote()">
+        <pre id="message">
+            <div class="paragraph">Dear Julie,</div>
+            <div class="paragraph">I’m going to be honest with you; I was searching up trivia questions, and I found this one question that really got me thinking: "When did you know you loved your partner?" I was stumped for about a day because I didn't have a straightforward answer. Then, I remembered this theory called the "Three Loves Theory" or the "Three Types of Love Theory." It suggests we go through three different love experiences or fall for three people in our lives, each time for a specific reason.</div>
+            <div class="paragraph">The first love hits when we're young, maybe in high school. It’s the idealistic love seen in movies or read in books—what we think we should be doing to fit in. We get into it, thinking it's the only love we'll ever have, even if it doesn't feel quite right. We may suppress our honest feelings to sustain the relationship, all because we believe this is what love is supposed to be. It's all about how others see us, not how we really feel. The first love is all about the picture.</div>
+            <div class="paragraph">Second love? That's our hard love. It teaches us lessons about who we are and how we want to be loved. It's the kind that hurts, filled with lies, pain, and maybe some manipulation. We think we're making different choices than the first time, but it turns out we're still trying to learn lessons, stuck in a cycle. This love can get pretty unhealthy. There might be drama, maybe even some emotional or physical stuff. This emotional roller coaster, with extreme highs and lows, keeps us hooked, hoping for a different outcome each time. Making it work becomes more important than our own well-being. The second love is the love we wish was easy and right.</div>
+            <div class="paragraph">Third love? The third love is unexpected and enduring. It's the love that looks all wrong but somehow fits perfectly. No ideal expectations, no pressure to be someone else. You're just accepted for who you are. It's not what we pictured. But it shatters those preconceived notions and shows us love doesn't have to fit our or society's ideas to be real. The third love is the love that just feels right.</div>
+            <div class="paragraph">So, when did I know I loved you? Honestly, I've fallen in love with you more than once. The first time, in 2014, was that youthful, lustful love. Then came the second type, hitting us from 2015 to 2021—we weathered storms. We kept falling for each other during this time as we kept rediscovering love in a long-term relationship, making mistakes, overcoming challenges together, hanging on, and growing.</div>
+            <div class="paragraph">In 2021, our love story reached its climax. It was the final lesson that paved the way for the third type of love—the one that feels like home without any explanation. Unconditional love, selfless and deep. It goes beyond personal desires, focusing on acceptance, compassion, and unconditional support.</div>
+            <div class="paragraph">Since then, I've been fortunate to experience this third type of love with you multiple times, and I consider myself damn lucky; especially to have shared all three types of love with you. You're beautiful, smart, and fun—a perfect storm that I had the chance to weather. Your patience and support allowed me to learn and grow, and for that, I am endlessly grateful. As we celebrate our 10-year anniversary, I look forward to continuing this journey with you—learning more about you, myself, and the ever-evolving nature of love.</div>
+            <div class="finalMessage"><a id="openVideo">Here's to 10 amazing years, my love.</a></div>
+            <div class="paragraph">Sincerely,<br>Len-Nerd</div>
+        </pre>
+    </div>
+
+    <audio autoplay loop id="backgroundMusic">
+        <source src="./music/Mac Miller - Cinderella ft. Ty Dolla $ign (Instrumental).mp3" type="audio/mp3">
+        Unsupported in Firefox
+    </audio>
+
+    <div class="actions">
+        <button onclick="window.location.href='Home.html'" class="home-button">Return</button>
+    </div>
+    <script>
+        var noteOpen = false;
+
+        function openNote() {
+            var note = document.getElementById('note');
+            var message = document.getElementById('message')
+
+            note.style.width = '650px';
+            note.style.height = 'auto';
+            note.style.backgroundImage = 'url("./assets/Paper.jpg")';
+            note.style.overflow = 'auto';
+            message.style.visibility = 'visible';
+        }
+    </script>
+    <script src="MusicPlayer.js"></script>
+</body>
+
+</html>

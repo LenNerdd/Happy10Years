@@ -1,0 +1,428 @@
+body {
+    min-height: 100vh;
+    min-width: 100vh;
+    background-color: #ffdde1;
+    color: #333;
+    font-family: 'Cute Font', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    color: #F6A5AE;
+    -webkit-text-stroke: 2px #472300;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.board {
+    position: relative;
+    width: 450px;
+    height: 450px;
+}
+
+.field {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    padding: 75px 0 0 0;
+    box-sizing: border-box;
+    width: 420px;
+    height: 435px;
+    overflow: hidden;
+    cursor: not-allowed;
+}
+
+.grid {
+    display: inline-flex;
+    flex-flow: column wrap;
+    position: relative;
+    min-width: 420px;
+    height: 360px;
+    counter-reset: player 1;
+}
+
+.column {
+    display: inline-flex;
+    flex-flow: column wrap;
+    height: 360px;
+}
+
+.front {
+    position: absolute;
+    top: 60px;
+    border: 15px solid #472300;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 450px;
+    height: 390px;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent, transparent 18px, #472300 20px, #472300 23px, #573615 23px, #573615 36px, #472300) center top/60px 60px;
+}
+
+input {
+    display: none;
+    position: absolute;
+    top: -90px;
+    margin: 0;
+    width: 60px;
+    height: 450px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+input:indeterminate {
+    display: initial;
+}
+
+/* Inputs for red */
+.column>input:nth-of-type(2n) {
+    right: 360px;
+}
+
+.column>.column>input:nth-of-type(2n) {
+    right: 300px;
+}
+
+.column>.column>.column>input:nth-of-type(2n) {
+    right: 240px;
+}
+
+.column>.column>.column>.column>input:nth-of-type(2n) {
+    right: 180px;
+}
+
+.column>.column>.column>.column>.column>input:nth-of-type(2n) {
+    right: 120px;
+}
+
+.column>.column>.column>.column>.column>.column>input:nth-of-type(2n) {
+    right: 60px;
+}
+
+.column>.column>.column>.column>.column>.column>.column>input:nth-of-type(2n) {
+    right: 0;
+}
+
+/* Inputs for yellow */
+.column>input:nth-of-type(2n+1) {
+    left: 0;
+}
+
+.column>.column>input:nth-of-type(2n+1) {
+    left: 60px;
+}
+
+.column>.column>.column>input:nth-of-type(2n+1) {
+    left: 120px;
+}
+
+.column>.column>.column>.column>input:nth-of-type(2n+1) {
+    left: 180px;
+}
+
+.column>.column>.column>.column>.column>input:nth-of-type(2n+1) {
+    left: 240px;
+}
+
+.column>.column>.column>.column>.column>.column>input:nth-of-type(2n+1) {
+    left: 300px;
+}
+
+.column>.column>.column>.column>.column>.column>.column>input:nth-of-type(2n+1) {
+    left: 360px;
+}
+
+/* Disc */
+.disc {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background: radial-gradient(circle, transparent 12px, transparent 13px, transparent 14px, transparent 21px, transparent 22px, transparent 23px, transparent) center/60px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, top 0s 0.2s, color 0s 0.2s;
+}
+
+/* Red's turn */
+input:hover+.disc {
+    background-image: url('./assets/Player1.png'); /* Add the path to your red disc image here */
+    opacity: 1;
+    transition: opacity 0.2s, top 0s;
+}
+
+input:checked+.disc {
+    background-image: url('./assets/Player1.png'); /* Add the path to your red disc image here */
+    opacity: 1;
+}
+
+/* Yellow's turn */
+input:hover+input+.disc {
+    background-image: url('./assets/Player2.png'); /* Add the path to your yellow disc image here */
+    opacity: 1;
+    transition: opacity 0.2s, top 0s;
+}
+
+input:checked+input+.disc {
+    background-image: url('./assets/Player2.png'); /* Add the path to your yellow disc image here */
+    opacity: 1;
+}
+
+
+/* Height and time of disc fall per row */
+input:hover+.disc:nth-of-type(1),
+input:hover+input+.disc:nth-of-type(1) {
+    top: -75px;
+}
+
+input:checked+.disc:nth-of-type(1),
+input:checked+input+.disc:nth-of-type(1) {
+    transition: top 0.14s cubic-bezier(0.56, 0, 1, 1);
+}
+
+input:hover+.disc:nth-of-type(2),
+input:hover+input+.disc:nth-of-type(6n+2) {
+    top: -135px;
+}
+
+input:checked+.disc:nth-of-type(2),
+input:checked+input+.disc:nth-of-type(2) {
+    transition: top 0.19s cubic-bezier(0.56, 0, 1, 1);
+}
+
+input:hover+.disc:nth-of-type(3),
+input:hover+input+.disc:nth-of-type(3) {
+    top: -195px;
+}
+
+input:checked+.disc:nth-of-type(3),
+input:checked+input+.disc:nth-of-type(3) {
+    transition: top 0.23s cubic-bezier(0.56, 0, 1, 1);
+}
+
+input:hover+.disc:nth-of-type(4),
+input:hover+input+.disc:nth-of-type(4) {
+    top: -255px;
+}
+
+input:checked+.disc:nth-of-type(4),
+input:checked+input+.disc:nth-of-type(4) {
+    transition: top 0.26s cubic-bezier(0.56, 0, 1, 1);
+}
+
+input:hover+.disc:nth-of-type(5),
+input:hover+input+.disc:nth-of-type(5) {
+    top: -315px;
+}
+
+input:checked+.disc:nth-of-type(5),
+input:checked+input+.disc:nth-of-type(5) {
+    transition: top 0.29s cubic-bezier(0.56, 0, 1, 1);
+}
+
+input:hover+.disc:nth-of-type(6n),
+input:hover+input+.disc:nth-of-type(6n) {
+    top: -375px;
+}
+
+input:checked+.disc:nth-of-type(6n),
+input:checked+input+.disc:nth-of-type(6n) {
+    transition: top 0.32s cubic-bezier(0.56, 0, 1, 1);
+}
+
+/* Fix stuck disc */
+input:checked+.disc,
+input:checked+input+.disc {
+    top: 0 !important;
+}
+
+/* Tracking turns */
+input:checked+.disc {
+    counter-increment: player 2;
+}
+
+input:checked+input+.disc {
+    counter-increment: player -2;
+}
+
+.grid::after {
+    content: counter(player, lower-roman);
+    display: inline-block;
+    max-width: 840px;
+    min-width: 420px;
+    letter-spacing: 375px;
+    font-family: 'Cute Font', cursive;
+    font-size: 1px;
+    overflow: hidden;
+}
+
+/* Draw outcome */
+form:valid .column>.column>.column>.column>.column>.column>.column>.column::after {
+    content: "It's a draw!";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: -75px;
+    width: 420px;
+    height: 435px;
+    visibility: visible;
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    cursor: initial;
+    pointer-events: auto;
+    animation: outcome 1.5s;
+}
+
+form:valid .column::after {
+    --content-value: "It's a draw!";
+    content: var(--content-value);
+}
+
+/* Team Julie column win */
+input:checked+.disc+input+input:checked+.disc+input+input:checked+.disc+input+input:checked~.column::after,
+/* Team Julie row win */
+input:nth-of-type(2):checked~.column>input:nth-of-type(2):checked~.column>input:nth-of-type(2):checked~.column>input:nth-of-type(2):checked~.column::after,
+input:nth-of-type(4):checked~.column>input:nth-of-type(4):checked~.column>input:nth-of-type(4):checked~.column>input:nth-of-type(4):checked~.column::after,
+input:nth-of-type(6):checked~.column>input:nth-of-type(6):checked~.column>input:nth-of-type(6):checked~.column>input:nth-of-type(6):checked~.column::after,
+input:nth-of-type(8):checked~.column>input:nth-of-type(8):checked~.column>input:nth-of-type(8):checked~.column>input:nth-of-type(8):checked~.column::after,
+input:nth-of-type(10):checked~.column>input:nth-of-type(10):checked~.column>input:nth-of-type(10):checked~.column>input:nth-of-type(10):checked~.column::after,
+input:nth-of-type(12):checked~.column>input:nth-of-type(12):checked~.column>input:nth-of-type(12):checked~.column>input:nth-of-type(12):checked~.column::after,
+/* Team Julie diagonal win */
+input:nth-of-type(2):checked~.column>input:nth-of-type(4):checked~.column>input:nth-of-type(6):checked~.column>input:nth-of-type(8):checked~.column::after,
+input:nth-of-type(4):checked~.column>input:nth-of-type(6):checked~.column>input:nth-of-type(8):checked~.column>input:nth-of-type(10):checked~.column::after,
+input:nth-of-type(6):checked~.column>input:nth-of-type(8):checked~.column>input:nth-of-type(10):checked~.column>input:nth-of-type(12):checked~.column::after,
+input:nth-of-type(8):checked~.column>input:nth-of-type(6):checked~.column>input:nth-of-type(4):checked~.column>input:nth-of-type(2):checked~.column::after,
+input:nth-of-type(10):checked~.column>input:nth-of-type(8):checked~.column>input:nth-of-type(6):checked~.column>input:nth-of-type(4):checked~.column::after,
+input:nth-of-type(12):checked~.column>input:nth-of-type(10):checked~.column>input:nth-of-type(8):checked~.column>input:nth-of-type(6):checked~.column::after {
+    content: "Team 'July' wins!";
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: -75px;
+    width: 420px;
+    height: 435px;
+    visibility: visible;
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    cursor: initial;
+    pointer-events: auto;
+    animation: outcome 1s;
+}
+
+/* Team Leny column win */
+input:checked+input+.disc+input:checked+input+.disc+input:checked+input+.disc+input:checked~.column::after,
+/* Team Leny row win */
+input:nth-of-type(1):checked~.column>input:nth-of-type(1):checked~.column>input:nth-of-type(1):checked~.column>input:nth-of-type(1):checked~.column::after,
+input:nth-of-type(3):checked~.column>input:nth-of-type(3):checked~.column>input:nth-of-type(3):checked~.column>input:nth-of-type(3):checked~.column::after,
+input:nth-of-type(5):checked~.column>input:nth-of-type(5):checked~.column>input:nth-of-type(5):checked~.column>input:nth-of-type(5):checked~.column::after,
+input:nth-of-type(7):checked~.column>input:nth-of-type(7):checked~.column>input:nth-of-type(7):checked~.column>input:nth-of-type(7):checked~.column::after,
+input:nth-of-type(9):checked~.column>input:nth-of-type(9):checked~.column>input:nth-of-type(9):checked~.column>input:nth-of-type(9):checked~.column::after,
+input:nth-of-type(11):checked~.column>input:nth-of-type(11):checked~.column>input:nth-of-type(11):checked~.column>input:nth-of-type(11):checked~.column::after,
+/* Team Leny diagonal win */
+input:nth-of-type(1):checked~.column>input:nth-of-type(3):checked~.column>input:nth-of-type(5):checked~.column>input:nth-of-type(7):checked~.column::after,
+input:nth-of-type(3):checked~.column>input:nth-of-type(5):checked~.column>input:nth-of-type(7):checked~.column>input:nth-of-type(9):checked~.column::after,
+input:nth-of-type(5):checked~.column>input:nth-of-type(7):checked~.column>input:nth-of-type(9):checked~.column>input:nth-of-type(11):checked~.column::after,
+input:nth-of-type(7):checked~.column>input:nth-of-type(5):checked~.column>input:nth-of-type(3):checked~.column>input:nth-of-type(1):checked~.column::after,
+input:nth-of-type(9):checked~.column>input:nth-of-type(7):checked~.column>input:nth-of-type(5):checked~.column>input:nth-of-type(3):checked~.column::after,
+input:nth-of-type(11):checked~.column>input:nth-of-type(9):checked~.column>input:nth-of-type(7):checked~.column>input:nth-of-type(5):checked~.column::after {
+    content: "Team 'Len-Nerd' wins!";
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: -75px;
+    width: 420px;
+    height: 435px;
+    visibility: visible;
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    cursor: initial;
+    pointer-events: auto;
+    animation: outcome 1s;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.actions button {
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #F6A5AE;
+    font-family: 'Cute Font', cursive;
+    color: #472300;
+    cursor: pointer;
+    border: 2px solid #472300;
+    width: 150px;
+}
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #F6A5AE;
+    font-family: 'Cute Font', cursive;
+    color: #472300;
+    cursor: pointer;
+    border: 2px solid #472300;
+    margin-top: 5px;
+    width: 150px;
+}
+
+button {
+    width: 150px;
+    margin-top: 25px;
+    border: 2px solid #472300;
+    border-radius: 20px;
+    padding: 12px 18px;
+    font-size: 20px;
+    font-family: 'Cute Font', cursive;
+    cursor: pointer;
+    color: #472300;
+    background: #F6A5AE center;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background: #f5b7be radial-gradient(circle, transparent 1%, #f5b7be 1%) center/15000%;
+}
+
+button:active {
+    background-color: #f5b7be;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+
+@keyframes outcome {
+    0% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

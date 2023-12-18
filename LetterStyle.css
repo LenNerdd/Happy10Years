@@ -1,0 +1,149 @@
+body {
+    min-height: 100vh;
+    min-width: 100vh;
+    background-color: #ffdde1;
+    background-image: url(assets/Background.png);
+    background-size: cover;
+    color: #472300;
+    font-family: 'Cute Font', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    color: #F6A5AE;
+    -webkit-text-stroke: 2px #472300;
+    margin-bottom: 1px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.actions button {
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #F6A5AE;
+    font-family: 'Cute Font', cursive;
+    color: #472300;
+    cursor: pointer;
+    border: 2px solid #472300;
+    width: 150px;
+}
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #F6A5AE;
+    font-family: 'Cute Font', cursive;
+    color: #472300;
+    cursor: pointer;
+    border: 2px solid #472300;
+    margin-top: 5px;
+    width: 150px;
+}
+
+.actions button {
+    width: 150px;
+    margin-top: 25px;
+    border: 2px solid #472300;
+    border-radius: 20px;
+    padding: 12px 18px;
+    font-size: 20px;
+    font-family: 'Cute Font', cursive;
+    cursor: pointer;
+    color: #472300;
+    background: #F6A5AE center;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background: #f5b7be radial-gradient(circle, transparent 1%, #f5b7be 1%) center/15000%;
+}
+
+button:active {
+    background-color: #f5b7be;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+.note-container {
+    position: relative;
+    width: 300px;
+    height: 170px;
+    background-color: #fff;
+    background-image: url("./assets/Envelope.png");
+    background-size: cover;
+    margin: 20px auto;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    -ms-overflow-style: none;
+}
+
+.note-container::-webkit-scrollbar {
+    display: none;
+}
+
+.note-container:hover {
+    transform: scale(1.05);
+}
+
+.note-container pre {
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, cursive;
+    white-space: pre-wrap;
+    text-align: left;
+    visibility: hidden;
+}
+
+.paragraph {
+    margin-bottom: -20px;
+}
+
+.finalMessage{
+    text-decoration: none; 
+    color: #472300; 
+    font-size: 18px; 
+    font-weight: bold;
+    margin-bottom: -20px;
+}
+
+.finalMessage:hover{
+    margin-left: 42px;
+    transform: scale(1.15);
+}
+
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-modal video {
+    width: 80%;
+    max-width: 400px;
+}
