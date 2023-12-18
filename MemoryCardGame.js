@@ -20,13 +20,82 @@ const pairMessages = {
 
 document.querySelector(".score").textContent = score;
 
-fetch("./data/cards.json")
-  .then((res) => res.json())
-  .then((data) => {
-    cards = [...data, ...data];
-    shuffleCards();
-    generateCards();
-  });
+cards = [
+  {
+    "image": "./assets/1.jpg",
+    "name": "1"
+  },
+  {
+    "image": "./assets/2.jpg",
+    "name": "2"
+  },
+  {
+    "image": "./assets/3.jpg",
+    "name": "3"
+  },
+  {
+    "image": "./assets/4.jpg",
+    "name": "4"
+  },
+  {
+    "image": "./assets/5.jpg",
+    "name": "5"
+  },
+  {
+    "image": "./assets/6.jpg",
+    "name": "6"
+  },
+  {
+    "image": "./assets/7.jpg",
+    "name": "7"
+  },
+  {
+    "image": "./assets/8.jpg",
+    "name": "8"
+  },
+  {
+    "image": "./assets/9.jpg",
+    "name": "9"
+  },
+  {
+    "image": "./assets/1.jpg",
+    "name": "1"
+  },
+  {
+    "image": "./assets/2.jpg",
+    "name": "2"
+  },
+  {
+    "image": "./assets/3.jpg",
+    "name": "3"
+  },
+  {
+    "image": "./assets/4.jpg",
+    "name": "4"
+  },
+  {
+    "image": "./assets/5.jpg",
+    "name": "5"
+  },
+  {
+    "image": "./assets/6.jpg",
+    "name": "6"
+  },
+  {
+    "image": "./assets/7.jpg",
+    "name": "7"
+  },
+  {
+    "image": "./assets/8.jpg",
+    "name": "8"
+  },
+  {
+    "image": "./assets/9.jpg",
+    "name": "9"
+  }
+];
+shuffleCards();
+generateCards();
 
 function shuffleCards() {
   let currentIndex = cards.length,
@@ -79,11 +148,11 @@ function flipCard() {
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
   let message = pairMessages[firstCard.dataset.name];
-  
+
   console.log(message)
 
   if (isMatch) {
-    disableCards();    
+    disableCards();
     displayMatchMessage(message);
   } else {
     unflipCards();
