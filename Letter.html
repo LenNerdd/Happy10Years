@@ -33,18 +33,37 @@
     <div class="actions">
         <button onclick="window.location.href='Home.html'" class="home-button">Return</button>
     </div>
+    <script src="Verify.js"></script>
     <script>
         var noteOpen = false;
+        var OpenedWithPassword = false;
 
-        function openNote() {
-            var note = document.getElementById('note');
-            var message = document.getElementById('message')
+        async function openNote() {
+            var passed = false;
 
-            note.style.width = '650px';
-            note.style.height = 'auto';
-            note.style.backgroundImage = 'url("./assets/Paper.jpg")';
-            note.style.overflow = 'auto';
-            message.style.visibility = 'visible';
+            var result = await checkNoteCode();
+            if (result === null) {
+                alert('Password entry canceled. Cannot view the note.');
+                return;
+            }
+            passed = result;
+
+            if (noteOpen == false) {
+                if (passed) {
+                    noteOpen = true;
+
+                    var note = document.getElementById('note');
+                    var message = document.getElementById('message');
+
+                    note.style.width = '650px';
+                    note.style.height = 'auto';
+                    note.style.backgroundImage = 'url("./assets/Paper.jpg")';
+                    note.style.overflow = 'auto';
+                    message.style.visibility = 'visible';
+                } else {
+                    alert('Must enter the correct password to view note.');
+                }
+            }
         }
     </script>
     <script src="MusicPlayer.js"></script>

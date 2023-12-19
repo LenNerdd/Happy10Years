@@ -31,7 +31,6 @@ if (video) {
             if (noteOpen == false) {
                 console.log("After opened, but variable not updated: ", noteOpen)
                 resumeAudio();
-                noteOpen = true;
                 console.log("After opened and variable updated: ", noteOpen)
             }
         });
